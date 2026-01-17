@@ -3,22 +3,39 @@ import pandas as pd
 st.set_page_config(page_title="SocialMediaSucht", page_icon="📱",
 layout="wide")
 #Styling der App Startseite
-st.markdown("""
-<style>
-    .main {
-        background-color: #f0f2f6;
+st.markdown(
+    """
+    <style>
+    /* Hintergrund der gesamten App */
+    .stApp {
+        background-color: #FFE4E6;
     }
-    .stButton>button {
-        background-color: #4CAF50;
-        color: white;
-        border-radius: 10px;
+
+    /* Hintergrund der Sidebar (falls vorhanden) */
+    [data-testid="stSidebar"] {
+        background-color: #FFD1D6;
+    }
+
+    /* Styling der Container/Boxen */
+    .block-container {
+        background-color: #FFE4E6;
+        padding: 3rem;
+        border-radius: 20px;
+    }
+
+    /* Styling für die Metriken (Zahlen-Boxen) */
+    [data-testid="stMetricValue"] {
+        color: #E11D48;
+    }
+
+    /* Styling für Tab-Texte */
+    .stTabs [data-baseweb="tab"] {
         font-weight: bold;
     }
-    h1 {
-        color: #990057;
-    }
-</style>
-""", unsafe_allow_html=True)
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 st.title("📱 Social Media Sucht der Studenten")
 st.markdown(""" Diese App analysiert die Social Media Sucht der Studenten. Wir nutzen täglich mehrere Stunden Social Media. Ob es nur eine Nachricht ist, die
