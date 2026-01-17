@@ -47,8 +47,7 @@ def load_data():
 df = load_data()
 
 #Tabs
-tab1, tab2, tab3 = st.tabs(["📊 1", "📈 2", "🔢 3"])
-
+tab1, tab2, tab3 = st.tabs(["👥 Demografie", "📱 Plattform & Schlaf", "😴 Schlaf vs. Sucht"])
 with tab1:
     st.subheader("Verteilungsanalyse nach Geschlecht")
 
