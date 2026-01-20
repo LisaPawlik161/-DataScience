@@ -1,93 +1,109 @@
-# DataScience
+Data Science Programmierung mit Python- WiSe 2025/26
+Prof. Dr. Selcan Ipek-Ugay/Amy Siu
 
 
 
-## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
 
-## Add your files
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
 
-```
-cd existing_repo
-git remote add origin https://gitlab.bht-berlin.de/lipa7219/datascience.git
-git branch -M main
-git push -uf origin main
-```
 
-## Integrate with your tools
 
-- [ ] [Set up project integrations](https://gitlab.bht-berlin.de/lipa7219/datascience/-/settings/integrations)
 
-## Collaborate with your team
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+Die Social-Media-Sucht der Studenten
+Dokumentation
 
-## Test and Deploy
 
-Use the built-in continuous integration in GitLab.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
 
-***
 
-# Editing this README
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+	
 
-## Suggestions for a good README
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
 
-## Name
-Choose a self-explaining name for your project.
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+Lisa-Marie Pawlik	102358	lipa7219@bht-berlin.de
+Inhaltsverzeichnis
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+Inhaltsverzeichnis	2
+1. Projektinformation	3
+2. Kernidee und Datenquelle	3
+3. Datenbereinigung	3
+4. Datenvisualisierung	4
+5. ML	5
+6. Streamlit-Anwendung	5
+7. Abbildungen	6
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
 
-## License
-For open source projects, say how it is licensed.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Projektinformation
+Name: Pawlik, Lisa-Marie
+Matrikelnummer: 102358
+Projekttitel: Die Social-Media-Sucht der Studenten
+Link: https://github.com/LisaPawlik161/-DataScience.git
+Link zum Download Nextcloud:
+https://cloud.bht-berlin.de/index.php/s/qgyoejDCSgqxmBQ
+2. Kernidee und Datenquelle
+Wir nutzen täglich mehrere Stunden Social-Media. Ob es nur eine Nachricht ist, die wir verschicken oder dem Feed auf Instagram, den wir folgen. Vielleicht nutzen wir auch ein bisschen zu viel Social-Media, vor allem in Situationen wo es nicht passt oder wo wir mehr acht auf andere Dinge geben sollten, wie zum Beispiel in der Universität. Deswegen habe ich mich gefragt: „Haben Studenten eine Social-Media-Sucht?” Dieses Thema betrifft nicht nur mich, sondern auch Millionen Studenten auf dieser Welt, die täglich mehrere Stunden auf Social-Media verbringen. Meine Datenquelle habe ich auf einer Open Data Source Quelle namens Kaggle gefunden.
+Dort habe ich nicht nach einer bestimmten Quelle gesucht, sondern erst durchstöbert und bin dann auf diese Datenquelle gestoßen. 
+Nach erster Analyse der Datenquelle und Beratung mit der Dozentin stellte sich heraus, dass diese Quelle eine synthetische Quelle ist.
+Das hat mich nicht davon abgehalten, diese zu nutzen, sondern hat es für mich noch interessanter gemacht, da ich sehen wollte, ob synthetische Daten wirklich so perfekt sind, wie es vermutet wurde von mir.
+
+3. Datenbereinigung
+
+Der erste Schritt meiner Analyse bestand in der Bereinigung der Datenquelle. Dieser Prozess umfasste die Identifizierung und Behandlung von fehlenden Werten, Duplikaten sowie potenziellen Ausreißern. Da es sich um einen synthetisch generierten Datensatz handelt, fielen diese Probleme erwartungsgemäß geringer aus als bei realen Datensätzen. Als erstes verschaffte ich mir einen Überblick über den Datensatz, der aus 705 Zeilen und 13 Spalten besteht. Die Überprüfung ergab, dass weder Duplikate noch leere Zeilen vorhanden waren. Zudem entsprachen die Datentypen (int64, object und float64) bereits den jeweiligen Kategorien, sodass hier keine Anpassungen erforderlich waren.
+Bei der Untersuchung der Spalten, vor allem aber der Spalte Avg_Daily_Usage_Hours traten zwar vereinzelt sehr hohe oder niedrige Werte auf, diese stufe ich aber als plausibel ein und entferne sie nicht als Ausreißer, da sie innerhalb eines realistischen Nutzungsspektrums liegen. Im Kontext der „Generation Z” und der fortschreitenden Digitalisierung im Alltag bei Studenten (Lernen mit YouTube, Kommunikation über WhatsApp/Discord, Entspannung via TikTok) sind solch hohe Werte zwar extrem, aber für mich plausibel. Zum Schluss habe ich die Richtigkeit der Textspalten geprüft (z. B. zur Vermeidung von Duplikaten durch unterschiedliche Groß- und Kleinschreibung oder Tippfehler). Da keine Fehler festgestellt wurden, blieb der Datensatz in seinem ursprünglichen Umfang von 705 Zeilen und 13 Spalten für die weitere Analyse erhalten.
+
+4. Datenvisualisierung 
+Bei der Auswahl der Visualisierungen lag mein Fokus darauf, die zentrale Fragestellung, ob Studierende Social-Media-Süchtig sind, zu untersuchen. 
+Ich habe mich primär für Scatterplots mit Farb- oder Größencodierung entschieden, da diese für mich am aussagekräftigsten erscheinen.
+Mit diesen habe ich versucht zu visualisieren, welches Geschlecht welche Plattform am meisten nutzt und wie sich dies auf den Schlaf auswirkt.
+Besonders auffällig war, dass Nutzer der Plattform Tiktok und Instagram im Durchschnitt die geringste Schlafdauer aufwiesen. 
+Ebenso habe ich durch einen anderen Scatterplot herausgefunden, dass je weniger die Menschen schlafen, desto abhängiger diese sind. 
+Welches für mich logisch erscheint nicht nur aus dem Aspekt, dass viele Social Media zu späterer Stunde nutzen, sondern auch dadurch, dass der Datensatz synthetisch ist.
+Ich glaube, dass die Spalte der Abhängigkeit auf Grundlage der Schlafstunden erstellt wurde.
+In meiner App habe ich ein Tool zur Verteilungsanalyse eingebaut. Nutzer können über ein Dropdown-Menü verschiedene Werte auswählen und sich diese als Histogramm anzeigen lassen. Besonders hilfreich ist die Funktion, die Daten per Checkbox nach Geschlecht aufzuteilen.
+Durch transparente Balken sieht man sofort, ob es Unterschiede zwischen Studenten und Studentinnen gibt. Ich habe aber auch nicht-relevante Daten wie die Student_ID automatisch aus der Auswahl entfernt, da diese für mich nicht relevant erscheinen.
+
+
+
+5. ML
+In diesem Teil des Projekts wollte ich herausfinden, ob man die Social-Media-Sucht (den Addicted_Score) mathematisch vorhersagen kann. Ich habe also eine Regressionsanalyse durchgeführt. Dafür habe ich ein Modell gebaut, das aus verschiedenen Daten lernt. Als „Lehrer“ dienten Informationen wie das Alter, die täglichen Handy-Stunden, die Schlafdauer und die psychische Gesundheit. Damit die Analyse spannend bleibt, habe ich nicht nur ein Modell genutzt, sondern drei verschiedene eingebaut: die Lineare Regression, den Decision Tree und den Random Forest. Um zu testen, wie gut die ML wirklich ist, habe ich den Datensatz aufgeteilt: Ein Teil der Daten wurde zum Lernen genutzt, und mit dem anderen Teil musste die ML beweisen, ob ihre Vorhersagen stimmen. Dabei gab es eine interessante Erkenntnis: Besonders der Random Forest zeigt sehr genau, welche Faktoren am wichtigsten sind. Es stellte sich heraus, dass Schlafmangel und eine hohe tägliche Nutzungsdauer die sichersten Anzeichen für einen hohen Sucht-Score sind. Da mein Datensatz synthetisch ist, waren die Vorhersagen fast schon „zu perfekt“. Das zeigt deutlich, dass die Daten nach logischen Regeln erstellt wurden.
+
+6. Streamlit-Anwendung
+
+In meiner Anwendung gibt es vier Seiten namens app, Daten Exploration, Visualisierung und Machine Learning Prediction die über die Sidebar auszuwählen sind. Auf der app Seite gibt es einen kleinen Einblick in den Datensatz.
+Auf der Daten Exploration Seite gibt es die Tabs Übersicht, Datenqualität und Variablenbeschreibung. Bei der Übersicht gibt es wieder einen kleinen Überblick über den Datensatz, wobei aber der Nutzer durch den integrierten Slider selber entscheiden kann, wie viele Zeilen angezeigt werden (zwischen 5 und 50). Auch die Anzahl und welche Datentypen vertreten sind, werden durch ein Drop-down-Menü abgedeckt. In dem Datenqualität Tab kann der Nutzer sehen, welche Werte fehlen. In dem letzten Tab der Seite werden manche Spalten nochmal tabellarisch erklärt und die Spalte Addicted Score wird nochmal in Gering, Moderat und Hoch kategorisiert.
+Auf der Seite Visualisierungen gibt es wieder drei Tabs, welche für die drei Visualisierungen stehen, die ich oben im Part Datenvisualisierung beschrieben habe.
+Dort habe ich dann die Filterauswahl implementiert für die Verteilungsanalyse nach Geschlecht. 
+Auf der Seite der ML habe ich Tabs, Training und Vorhersage.
+Bei dem Training habe ich ebenso einen Slider und ein Drop-down-Menü eingebaut und bei der Vorhersage ebenso Slider verwendet.
+
+
