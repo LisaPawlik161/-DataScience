@@ -9,7 +9,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.set_page_config(page_title="Machine:Learning_Prediction", page_icon="📱", layout="wide")
+st.set_page_config(page_title="Machine Learning_Prediction", page_icon="📱", layout="wide")
 
 #Styling der Seite
 st.markdown(
