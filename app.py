@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 st.set_page_config(page_title="SocialMediaSucht", page_icon="📱",
 layout="wide")
+
 #Styling der App Startseite
 st.markdown(
     """
@@ -11,7 +12,7 @@ st.markdown(
         background-color: #FFE4E6;
     }
 
-    /* Hintergrund der Sidebar (falls vorhanden) */
+    /* Hintergrund der Sidebar */
     [data-testid="stSidebar"] {
         background-color: #FFD1D6;
     }
@@ -23,7 +24,7 @@ st.markdown(
         border-radius: 20px;
     }
 
-    /* Styling für die Metriken (Zahlen-Boxen) */
+    /* Styling für die Metriken  */
     [data-testid="stMetricValue"] {
         color: #E11D48;
     }

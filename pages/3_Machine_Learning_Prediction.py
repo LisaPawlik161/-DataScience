@@ -9,7 +9,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.set_page_config(page_title="ML Prediction - Sucht-Analyse", page_icon="🤖", layout="wide")
+st.set_page_config(page_title="Machine:Learning_Prediction", page_icon="📱", layout="wide")
 
 #Styling der Seite
 st.markdown(
@@ -20,7 +20,7 @@ st.markdown(
         background-color: #FFE4E6;
     }
 
-    /* Hintergrund der Sidebar (falls vorhanden) */
+    /* Hintergrund der Sidebar */
     [data-testid="stSidebar"] {
         background-color: #FFD1D6;
     }
@@ -32,7 +32,7 @@ st.markdown(
         border-radius: 20px;
     }
 
-    /* Styling für die Metriken (Zahlen-Boxen) */
+    /* Styling für die Metriken  */
     [data-testid="stMetricValue"] {
         color: #E11D48;
     }
@@ -53,6 +53,10 @@ def load_data():
     return pd.read_csv('data/Sozial_Media_Sucht_cleaned.csv')
 df = load_data()
 
+# Tabs
+tab1, tab2 = st.tabs(["🎯 Training", "🔮 Deine Vorhersage"])
+
+#datenformat auch aus beispiel übernommen (also die Grundform und auf meins übertragen)
 try:
     df = load_data()
 
@@ -67,8 +71,6 @@ try:
     X = df[feature_cols]
     y = df[target_col]
 
-    # Tabs
-    tab1, tab2 = st.tabs(["🎯 Training", "🔮 Deine Vorhersage"])
 
     # Training
     with tab1:
@@ -107,17 +109,17 @@ try:
 
                     y_pred = model.predict(X_test)
 
-                    # Metriken berechnen
+                    # berechnen
                     r2 = r2_score(y_test, y_pred)
                     rmse = np.sqrt(mean_squared_error(y_test, y_pred))
 
                     st.success(f"✅ {model_choice} erfolgreich trainiert!")
 
                     #anzeigen
-                    st.markdown("#### 📊 Modell-Güte")
+                    st.markdown("#### 📊 Ergebnisse")
                     m_col1, m_col2, m_col3 = st.columns(3)
-                    m_col1.metric("R² Score (Bestwert 1.0)", f"{r2:.2f}")
-                    m_col2.metric("Fehler (RMSE)", f"{rmse:.2f}")
+                    m_col1.metric("Accuracy (Bestwert 1.0)", f"{r2:.2f}")
+                    m_col2.metric("Fehler", f"{rmse:.2f}")
                     m_col3.metric("Trainings-Daten", len(X_train))
 
                     # Visualisierung:
@@ -147,7 +149,7 @@ try:
         st.subheader("📱 Social Media Sucht-Check")
         st.write("Gib deine Daten ein, um eine Schätzung deines Sucht-Scores basierend auf Linearer Regression zu erhalten.")
 
-        # Prüfen, ob bereits ein Modell trainiert wurde
+        # Prüfen ob bereits ein Modell trainiert wurde
         if 'trained_model' not in st.session_state:
             st.warning("⚠️ Bitte trainiere zuerst ein Modell im Tab 'Training & Evaluation'!")
         else:

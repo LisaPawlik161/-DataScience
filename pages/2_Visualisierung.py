@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.set_page_config(page_title="SocialMediaSucht", page_icon="📱",
+st.set_page_config(page_title="Visualisierung", page_icon="📱",
 layout="wide")
 #Styling der Seite
 st.markdown(
@@ -14,7 +14,7 @@ st.markdown(
         background-color: #FFE4E6;
     }
 
-    /* Hintergrund der Sidebar (falls vorhanden) */
+    /* Hintergrund der Sidebar */
     [data-testid="stSidebar"] {
         background-color: #FFD1D6;
     }
@@ -26,7 +26,7 @@ st.markdown(
         border-radius: 20px;
     }
 
-    /* Styling für die Metriken (Zahlen-Boxen) */
+    /* Styling für die Metriken  */
     [data-testid="stMetricValue"] {
         color: #E11D48;
     }
@@ -47,45 +47,47 @@ def load_data():
 df = load_data()
 
 #Tabs
-tab1, tab2, tab3 = st.tabs(["👥 Demografie", "📱 Plattform & Schlaf", "😴 Schlaf vs. Sucht"])
+tab1, tab2, tab3 = st.tabs(["👥 Verteilungen", "📱 Plattform & Schlaf", "😴 Schlaf vs. Sucht"])
 with tab1:
     st.subheader("Verteilungsanalyse nach Geschlecht")
 
-    col1, col2 = st.columns([1, 3])
+#in splaten einteilen
+    col1, col2 = st.columns([1, 2])
 
     with col1:
-        # 1. Numerisches Feature auswählen
+        # nur Numerische spalten
+        # student_id macht kein sinn deswegen raus
         numeric_cols = df.select_dtypes(include=['int64', 'float64']).columns.tolist()
         if 'Student_ID' in numeric_cols:
             numeric_cols.remove('Student_ID')
 
         selected_feature = st.selectbox("Feature wählen:", numeric_cols)
 
-        # 2. Einfache Checkbox für die Aufteilung
+        #Checkbox für die Aufteilung
         show_by_gender = st.checkbox("Nach Geschlecht aufteilen")
 
     with col2:
+        #code vom beispiel übernommen
         # Plot erstellen
         fig, ax = plt.subplots(figsize=(10, 5))
 
         if show_by_gender:
-            # Aufteilung nach Male / Female (oder was im Datensatz steht)
+            # Aufteilung nach Male oder Female
             for gender in df['Gender'].unique():
                 subset = df[df['Gender'] == gender]
                 ax.hist(subset[selected_feature], alpha=0.5, label=gender, bins=20)
             ax.legend(title="Geschlecht")
             ax.set_title(f'Vergleich der Geschlechter: {selected_feature}')
         else:
-            # Einfaches Histogramm für alle
+            # Historgram
             ax.hist(df[selected_feature], bins=20, color='skyblue', edgecolor='black')
             ax.set_title(f'Gesamtverteilung: {selected_feature}')
 
         ax.set_xlabel(selected_feature)
         ax.set_ylabel('Häufigkeit (Anzahl Studenten)')
-
         st.pyplot(fig)
 
-
+#aus meiner Aufgabe von woche 8 übernommen
 with tab2:
     st.subheader("Plattformnutzung nach Geschlecht und Schlaf")
     st.markdown("""
@@ -103,6 +105,7 @@ with tab2:
     plt.legend()
     st.pyplot(fig)
 
+#aus meiner Aufgabe von woche 8 übernommen
 with tab3:
     st.subheader("Der Zusammenhang zwischen Schlaf und Sucht")
     st.markdown("""Einer der wichtigsten Indikatoren für Social Media Sucht ist der Schlafmangel. 

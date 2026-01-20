@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 
 #voreinstellungen
-st.set_page_config(page_title="SocialMediaSucht", page_icon="📱",
+st.set_page_config(page_title="Daten_Exploration", page_icon="📱",
 layout="wide")
 #Styling der Seite
 st.markdown(
@@ -14,7 +14,7 @@ st.markdown(
         background-color: #FFE4E6;
     }
 
-    /* Hintergrund der Sidebar (falls vorhanden) */
+    /* Hintergrund der Sidebar */
     [data-testid="stSidebar"] {
         background-color: #FFD1D6;
     }
@@ -26,7 +26,7 @@ st.markdown(
         border-radius: 20px;
     }
 
-    /* Styling für die Metriken (Zahlen-Boxen) */
+    /* Styling für die Metriken  */
     [data-testid="stMetricValue"] {
         color: #E11D48;
     }
@@ -54,14 +54,10 @@ tab1, tab2, tab3 = st.tabs([" 📋 Übersicht", " 🛡️ Datenqualität", " �
 
 with tab1:
 
-#in spalten aufteilen
-    col1, col2 = st.columns([2, 1])
-
     st.markdown("#### 🔍 Daten-Vorschau")
     n_rows = st.select_slider("Anzeige-Umfang", options=[5, 10, 20, 50], value=10)
     st.dataframe(df.head(n_rows), use_container_width=True, hide_index=True)
     st.divider()
-
 
     st.markdown("#### 🧬 Struktur")
     type_counts = df.dtypes.value_counts().reset_index()
@@ -96,48 +92,36 @@ with tab2:
     st.divider()
 
 
-#quelle:https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.quantile.html mit hilfe von gemini
-    st.markdown("#### 📈 Verteilung & Ausreißer")
-    num_cols = df.select_dtypes(include=['number']).columns
-
-    if not num_cols.empty:
-        selected_col = st.selectbox("Wähle eine numerische Spalte zur Analyse:", num_cols)
-        Q1 = df[selected_col].quantile(0.25)
-        Q3 = df[selected_col].quantile(0.75)
-        IQR = Q3 - Q1
-        lower_bound = Q1 - 1.5 * IQR
-        upper_bound = Q3 + 1.5 * IQR
-
-        # ausreißer finden
-        outliers = df[(df[selected_col] < lower_bound) | (df[selected_col] > upper_bound)]
-
-        # Meldung
-        if not outliers.empty:
-            st.warning(
-                f"⚠️ Achtung: In der Spalte '{selected_col}' wurden {len(outliers)} potenzielle Ausreißer gefunden.")
-            with st.expander("Ausreißer-Daten anzeigen"):
-                st.dataframe(outliers)
-        else:
-            st.success(f"✅ Sauber: Die Spalte '{selected_col}' enthält keine statistischen Ausreißer.")
-
-        # Visualisierung
-        c1, c2 = st.columns(2)
-        with c1:
-            fig_hist = px.histogram(df, x=selected_col, title=f"Verteilung von {selected_col}",
-                                    marginal="rug", color_discrete_sequence=['#00CC96'])
-            st.plotly_chart(fig_hist, use_container_width=True)
-        with c2:
-            fig_box = px.box(df, y=selected_col, title=f"Boxplot {selected_col}",
-                             points="all", color_discrete_sequence=['#AB63FA'])
-            st.plotly_chart(fig_box, use_container_width=True)
-    else:
-        st.info("Keine numerischen Spalten für Verteilungsanalyse gefunden.")
-
-    st.divider()
-
 with tab3:
     st.header("Variablenbeschreibung")
 
+    st.markdown("#### Die Sucht-Skala (Addicted Score)")
+    st.write("Der Score von **0 bis 10** gibt an, wie stark die psychische Abhängigkeit ausgeprägt ist.")
+
+    # Erstellung (Dictionary)
+    risk_data = {
+        "Score": ["0.0 - 3.9", "4.0 - 6.9", "7.0 - 10.0"],
+        "Risiko": ["Gering", "Moderat", "Hoch"],
+        "Symptome": [
+            "Kontrollierte Nutzung, kaum Auswirkungen auf den Alltag.",
+            "Vernachlässigung von Hobbys, unruhiger Schlaf, längere Online-Zeiten.",
+            "Soziale Isolation, Entzugserscheinungen, starke Konflikte im Umfeld."
+        ]
+    }
+
+
+    # farben für die tabelle
+    def color_risk(val):
+        if "Gering" in str(val): return 'background-color: #d4edda'
+        if "Moderat" in str(val): return 'background-color: #fff3cd'
+        if "Hoch" in str(val): return 'background-color: #f8d7da'
+        return ''
+    st.table(pd.DataFrame(risk_data).style.applymap(color_risk, subset=['Risiko']))
+
+
+    st.markdown("#### Allgemeine Beschreibung")
+
+    #dictionary
     full_variables = {
         "Spaltenname": [
             "Academic_Level",
@@ -163,31 +147,5 @@ with tab3:
 
 
     st.divider()
-
-
-    st.header("Die Sucht-Skala (Addicted Score)")
-    st.write("Der Score von **0 bis 10** gibt an, wie stark die psychische Abhängigkeit ausgeprägt ist.")
-
-    # Erstellung der Risiko-Tabelle
-    risk_data = {
-        "Score": ["0.0 - 3.9", "4.0 - 6.9", "7.0 - 10.0"],
-        "Risiko": ["Gering", "Moderat", "Hoch"],
-        "Symptome": [
-            "Kontrollierte Nutzung, kaum Auswirkungen auf den Alltag.",
-            "Vernachlässigung von Hobbys, unruhiger Schlaf, längere Online-Zeiten.",
-            "Soziale Isolation, Entzugserscheinungen, starke Konflikte im Umfeld."
-        ]
-    }
-
-
-    # Farbliche Darstellung der Tabelle
-    def color_risk(val):
-        if "Gering" in str(val): return 'background-color: #d4edda'  # Grün
-        if "Moderat" in str(val): return 'background-color: #fff3cd'  # Gelb
-        if "Hoch" in str(val): return 'background-color: #f8d7da'  # Rot
-        return ''
-
-
-    st.table(pd.DataFrame(risk_data).style.applymap(color_risk, subset=['Risiko']))
 
 
